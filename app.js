@@ -5,6 +5,9 @@ const { urlencoded } = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 
+//internal imports
+const { notFoundHandler, errorHandler } = require('./middlewares/common/errorHandler');
+
 const app = express();
 dotenv.config();
 
@@ -18,7 +21,7 @@ mongoose.connect(process.env.MONGO_CONNECTION_STRING, {
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-app.set("view engin", "ejs");
+app.set("view engine", "ejs");
 
 //static folder
 app.use(express.static(path.join(__dirname, "public")));
@@ -29,6 +32,8 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //routing
 
 //error handling
+app.use(notFoundHandler);
+app.use(errorHandler);
 
 app.listen(process.env.PORT, () =>{
     console.log(`app is listening to ${process.env.PORT}`);
