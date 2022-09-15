@@ -1,5 +1,7 @@
 function getUsers(req, res, next){
-    res.render("users");
+    res.render("users",{
+        title: "User - Chat Application"
+    });
 }
 
 module.exports = {

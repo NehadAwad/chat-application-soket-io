@@ -5,6 +5,7 @@ const { urlencoded } = require('express');
 const path = require('path');
 const cookieParser = require('cookie-parser');
 const loginRouter = require('./router/loginRouter');
+const usersRouter = require('./router/usersRouter');
 
 //internal imports
 const { notFoundHandler, errorHandler } = require('./middlewares/common/errorHandler');
