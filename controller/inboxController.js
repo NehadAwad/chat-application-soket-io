@@ -3,3 +3,7 @@ function getInbox(req, res, next){
         title: "Inbox - Chat Application"
     });
 }
+
+module.exports = {
+    getInbox
+};
