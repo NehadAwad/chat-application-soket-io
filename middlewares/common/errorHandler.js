@@ -5,18 +5,17 @@ function notFoundHandler(req, res, next){
 }
 
 function errorHandler(err, req, res, next){
-   res.locals.error = process.env.NODE_ENV === "development" ? err : { message: err.message };
+    res.locals.error = process.env.NODE_ENV === "development" ? err : { message: err.message };
 
-   res.status(err.status || 500);
-   res.locals.test = "salfjsd";
+    res.status(err.status || 500);
 
-   if(!res.locals.html){
+    if (res.locals.html) {
         res.render("error", {
-            title: "Error Page"
+        title: "Error page",
         });
-   }else{
+    } else {
         res.json(res.locals.error);
-   }
+    }
 }
 
 module.exports = {
