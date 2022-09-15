@@ -4,6 +4,6 @@ const { getUsers }= require("../controller/usersController");
 const decorateHtmlResponse = require("../middlewares/common/decorateHtmlResponse");
 
 
-router.get("/", getUsers);
+router.get("/", decorateHtmlResponse("Users"), getUsers);
 
 module.exports = router;
