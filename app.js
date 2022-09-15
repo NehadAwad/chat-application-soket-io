@@ -33,7 +33,7 @@ app.use(cookieParser(process.env.COOKIE_SECRET));
 //routing
 
 app.use("/", loginRouter);
-// app.use("/users", usersRouter);
+app.use("/users", usersRouter);
 // app.use("/inbox", inboxRouter);
 
 //error handling
