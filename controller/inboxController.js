@@ -112,6 +112,7 @@ async function getMessages(req, res, next) {
         messages: messages,
         participant,
       },
+      // req.user.userid comes from checkLogin
       user: req.user.userid,
       conversation_id: req.params.conversation_id,
     });
@@ -202,4 +203,4 @@ module.exports = {
   addConversation,
   getMessages,
   sendMessage,
-};
+};  
