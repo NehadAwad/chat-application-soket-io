@@ -129,7 +129,6 @@
 
         let response = await fetch(`/inbox/messages/${conversation_id}`);
         const result= await response.json();
-
         if(!result.errors && result.data) {
             form.style.visibility = 'visible';
             
