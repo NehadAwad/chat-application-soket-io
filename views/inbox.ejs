@@ -1,8 +1,8 @@
 <%- include('./partials/header.ejs'); %>
     <div id="chat-container">
-      <div id="search-container">
-        <input type="text" placeholder="Search" />
-      </div>
+      <!-- search -->
+      <%- include('./partials/search-inbox.ejs'); %>
+      
       <div id="conversation-list">
         <% data.forEach(function(conversation) { %>
           <!-- conversation creator is same to logged in user, so we need to show participant name and avatar -->
@@ -124,7 +124,7 @@
         // messages failure toast
         const messagesFailureToast = Toastify({
           text: "Error loading messages!",
-          duration: 1000,
+          duration: 2000,
         });
 
         let response = await fetch(`/inbox/messages/${conversation_id}`);
@@ -186,7 +186,7 @@
 
         const sendMessageFailureToast = Toastify({
           text: "Error sending message",
-          duration: 1000,
+          duration: 2000,
         });
 
         // prepare the form data
