@@ -2,6 +2,8 @@
 const multer = require("multer");
 const path = require("path");
 const createError = require("http-errors");
+let fs = require('fs-extra');
+
 
 function uploader(
   subfolder_path,
@@ -12,6 +14,7 @@ function uploader(
 ) {
   // File upload folder
   const UPLOADS_FOLDER = `${__dirname}/../public/uploads/${subfolder_path}/`;
+  fs.mkdirsSync(UPLOADS_FOLDER);
 
   // define the storage
   const storage = multer.diskStorage({

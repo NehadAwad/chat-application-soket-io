@@ -7,7 +7,7 @@ function avatarUpload(req, res, next) {
     1000000,
     "Only .jpg, jpeg or .png format allowed!"
   );
-
+    
   // call the middleware function
   upload.any()(req, res, (err) => {
     if (err) {
