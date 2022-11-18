@@ -29,7 +29,7 @@
     // reset
     users_placeholder_search.style.display = "none";
 
-    if (input.value) {
+    if (input_search.value) {
       typingTimer01 = setTimeout(searchUsers01, doneTypingInterval_search); //user is "finished typing," send search request
     }
   });
@@ -102,7 +102,7 @@
       });
 
       const result = response.json();
-
+      console.log(result)
       if (!result.errors) {
         // reset
         users_placeholder_search.style.display = "none";
