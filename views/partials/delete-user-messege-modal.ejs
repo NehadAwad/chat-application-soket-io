@@ -1,8 +1,8 @@
-<div class="modal-wrapper" id="add-conversation-modal">
+<div class="modal-wrapper" id="delete-user-message-modal">
   <div class="modal">
-    <a onclick="closeModal()" class="modal-close">+</a>
+    <a onclick="closeModal01()" class="modal-close">+</a>
     <div class="modal-title">
-      <h2>Create New Conversation</h2>
+      <h2>Are you want to delete this user?</h2>
     </div>
     <div class="modal-body">
       <form id="add-conversation-form">
@@ -21,8 +21,20 @@
   </div>
 </div>
 <script>
-  function deleteModal() {
-      modal.style.display = "block";
-    }
+
+const modal01 = document.querySelector("#delete-user-message-modal");
+
+
+
+function closeModal01() {
+  modal01.style.display = "none";
+  // reset
+  // users_placeholder.style.display = "none";
+  // input.value = "";
+}
+
+function deleteModal() {
+  modal01.style.display = "block";
+}
   
 </script>
