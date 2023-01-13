@@ -25,7 +25,6 @@ router.get("/", decorateHtmlResponse("Users"), getUsers);
 // add user, logincheck 
 router.post(
   "/",
-  
   avatarUpload,
   addUserValidators,
   addUserValidationHandler,
